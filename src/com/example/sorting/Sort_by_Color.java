@@ -53,16 +53,16 @@ public class Sort_by_Color {
 		int end = A.length - 1 ;
 		int i = 0;
 
-		while (start <= end && i <= end) {
+		while (i <= end) {
 			if(A[i] == 0) {
 				swap(A, start, i);
 				start++;
-				i++;
+				i++; //here increment i, because you will always swap 0 with 1 only. because as you move from left to right in array
 
 			} else if(A[i] == 2) {
 				swap(A, end, i);
 				end--;
-				// Dont increment i here, as if the number 2 is swapped with 0, it needs to swapped again by going through loop
+				// Dont increment i here, because 2 can be swapped either 0 or 1, therefore it needs to be swapped again by going through loop
 			} else {
 				i++; // if A[i] == 1
 			}
