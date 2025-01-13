@@ -57,12 +57,12 @@ public class Sort_by_Color {
 			if(A[i] == 0) {
 				swap(A, start, i);
 				start++;
-				i++; //here increment i, because you will always swap 0 with 1 only. because as you move from left to right in array
+				i++; //here increment i, because you will always swap 0 with 1 only. because as you move from left to right in array, smallest number is pushed to left side.
 
 			} else if(A[i] == 2) {
 				swap(A, end, i);
 				end--;
-				// Dont increment i here, because 2 can be swapped either 0 or 1, therefore it needs to be swapped again by going through loop
+				// Don't increment i here, because 2 can be swapped either 0 or 1, therefore it needs to be swapped again by going through loop
 			} else {
 				i++; // if A[i] == 1
 			}
