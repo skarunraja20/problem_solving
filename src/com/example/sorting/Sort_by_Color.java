@@ -55,16 +55,12 @@ public class Sort_by_Color {
 
 		while (start <= end && i <= end) {
 			if(A[i] == 0) {
-				int temp = A[start];
-				A[start] = A[i];
-				A[i] = temp;
+				swap(A, start, i);
 				start++;
 				i++;
 
 			} else if(A[i] == 2) {
-				int temp = A[end];
-				A[end] = A[i];
-				A[i] = temp;
+				swap(A, end, i);
 				end--;
 				// Dont increment i here, as if the number 2 is swapped with 0, it needs to swapped again by going through loop
 			} else {
@@ -74,4 +70,12 @@ public class Sort_by_Color {
 
 		return A;
 	}
+	
+	
+	private void swap(int[] A, int i, int j) {
+		int temp = A[i];
+		A[i] = A[j];
+		A[j] = temp;
+	}
+	
 }
