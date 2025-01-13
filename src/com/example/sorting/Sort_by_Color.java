@@ -53,21 +53,23 @@ public class Sort_by_Color {
 		int end = A.length - 1 ;
 		int i = 0;
 
-		while (start <= end) {
+		while (start <= end && i <= end) {
 			if(A[i] == 0) {
 				int temp = A[start];
 				A[start] = A[i];
 				A[i] = temp;
 				start++;
-			}
-			if(A[i] == 2) {
+				i++;
+
+			} else if(A[i] == 2) {
 				int temp = A[end];
 				A[end] = A[i];
 				A[i] = temp;
 				end--;
+				// Dont increment i here, as if the number 2 is swapped with 0, it needs to swapped again by going through loop
+			} else {
+				i++; // if A[i] == 1
 			}
-			i++;
-			
 		}
 
 		return A;
